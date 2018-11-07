@@ -20,10 +20,13 @@ function capitalize(myString)
 function camelCase(myString)
 {
     let finalString = '';
+    myString = myString.trim();
 
     if(myString.length != 0)
     {
-        const words = myString.split(' ');
+        let words = myString.split(' ');
+        words = words.map(word => word.trim());
+        words = words.map(word => word.toLowerCase());
 
         for(let i = 0; i < words.length; i++)
         {
@@ -71,6 +74,6 @@ function leet(myString)
 
 console.log(ucfirst('hello world'));
 console.log(capitalize('hello world'));
-console.log(camelCase('hello world'));
+console.log(camelCase(' toggleCase'));
 console.log(snake_case('HELLO WORLD'));
 console.log(leet('azeroiuj ifuahezfa iuhazer'));
