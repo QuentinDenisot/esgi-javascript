@@ -24,7 +24,7 @@ function camelCase(myString)
 
     if(myString.length != 0)
     {
-        let words = myString.split(' ');
+        let words = myString.split(/_|\s/);
         words = words.map(word => word.trim());
         words = words.map(word => word.toLowerCase());
 
@@ -74,6 +74,6 @@ function leet(myString)
 
 console.log(ucfirst('hello world'));
 console.log(capitalize('hello world'));
-console.log(camelCase(' toggleCase'));
+console.log(camelCase('ToggleCase is_the coolest'));
 console.log(snake_case('HELLO WORLD'));
 console.log(leet('azeroiuj ifuahezfa iuhazer'));
