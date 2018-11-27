@@ -13,7 +13,7 @@ function type_check_v1(arg1, arg2)
             break;
 
         case 'object':
-            isType = typeof arg1 === 'object' && arg1 !== null;
+            isType = typeof arg1 === 'object' && arg1 !== null && !Array.isArray(arg1);
             break;
 
         case 'null':
@@ -38,3 +38,4 @@ console.log(type_check_v1({prop: 'test'}, 'object'));
 console.log(type_check_v1(null, 'null'));
 console.log(type_check_v1(undefined, 'undefined'));
 console.log(type_check_v1([1, 2, 3], 'array'));
+console.log(type_check_v1([1, 2, 3], 'object'));
