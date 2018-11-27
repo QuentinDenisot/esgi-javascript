@@ -21,15 +21,24 @@ function type_check_v1(arg1, arg2)
             break;
 
         case 'undefined':
-            isType = typeof arg1 === 'undefined';
+            isType = arg1 === undefined;
             break;
 
         case 'array':
             isType = Array.isArray(arg1);
             break;
+
+        case 'function':
+            isType = typeof arg1 === 'function';
+            break;
     }
 
     return isType;
+}
+
+function type_check_v2()
+{
+
 }
 
 console.log(type_check_v1(1, 'number'));
@@ -39,3 +48,6 @@ console.log(type_check_v1(null, 'null'));
 console.log(type_check_v1(undefined, 'undefined'));
 console.log(type_check_v1([1, 2, 3], 'array'));
 console.log(type_check_v1([1, 2, 3], 'object'));
+console.log(type_check_v1(type_check_v1, 'function'));
+
+console.log(type_check_v2());
