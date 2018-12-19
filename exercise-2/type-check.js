@@ -36,9 +36,9 @@ function type_check_v1(arg1, arg2)
     return isType;
 }
 
-function type_check_v2()
+function type_check_v2(argType, argValue, argEnum)
 {
-
+    
 }
 
 console.log(type_check_v1(1, 'number'));
